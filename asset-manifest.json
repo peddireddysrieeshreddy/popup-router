@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/peddireddysrieeshreddy/popup-router.git/static/css/main.0a2c4f48.css",
+    "main.js": "/peddireddysrieeshreddy/popup-router.git/static/js/main.f77ae597.js",
+    "index.html": "/peddireddysrieeshreddy/popup-router.git/index.html",
+    "main.0a2c4f48.css.map": "/peddireddysrieeshreddy/popup-router.git/static/css/main.0a2c4f48.css.map",
+    "main.f77ae597.js.map": "/peddireddysrieeshreddy/popup-router.git/static/js/main.f77ae597.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0a2c4f48.css",
+    "static/js/main.f77ae597.js"
+  ]
+}
