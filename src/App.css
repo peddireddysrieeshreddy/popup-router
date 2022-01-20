@@ -2,6 +2,19 @@
   text-align: center;
 }
 
+.pagesList {
+  height: 100px;
+
+  list-style: none;
+  text-decoration: none;
+  text-align: center;
+  /* background-color: rgb(130, 175, 176); */
+  background-color: #c9c8c6;
+  margin: 0 60px 10px 60px;
+  padding-top: 18px;
+  border-radius: 20px;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
