@@ -9,6 +9,10 @@ const Page2 = () => {
     empName: "",
     empAddress: "",
   });
+  const [error, setError] = useState({
+    empName: false,
+    empAddress: false,
+  });
   const [data, setData] = useState("");
   const checkDemo = () => {
     const variable = JSON.parse(localStorage.getItem("personalDetails"));
@@ -17,16 +21,30 @@ const Page2 = () => {
   };
   useEffect(() => {
     checkDemo();
-  }, []);
+  }, [error, state]);
 
   const formSubmit = (e) => {
     e.preventDefault();
     console.log(state);
-    localStorage.setItem("employeeDetails", JSON.stringify(state));
-    navigate("/popup");
-    if (state) {
-      setData(state);
+    if (!state.empName && !state.empAddress) {
+      setError({
+        empName: true,
+        empAddress: true,
+      });
+    } else if (!state.empAddress) {
+      setError({
+        empAddress: true,
+      });
+    } else {
+      navigate("/popup");
     }
+    console.log(error);
+
+    if (state.empName && state.empAddress) {
+      setData(state);
+      navigate("/popup");
+    }
+    localStorage.setItem("employeeDetails", JSON.stringify(state));
   };
 
   const onFormChange = (e) => {
@@ -82,6 +100,12 @@ const Page2 = () => {
               placeholder="Employee Name"
               onChange={onFormChange}
             />
+            {error && error.empName && (
+              <p style={{ color: "red" }}>
+                Please fill the Employee Name input
+              </p>
+            )}
+
             <input
               type="text"
               required
@@ -90,6 +114,11 @@ const Page2 = () => {
               placeholder="Employee Address"
               onChange={onFormChange}
             />
+            {error && error.empAddress && (
+              <p style={{ color: "red" }}>
+                Please fill the Employee Address input
+              </p>
+            )}
           </form>
 
           <div>
